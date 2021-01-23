@@ -41,11 +41,7 @@ public class Programa1GenerarPruebas {
 			Scanner fOrigen = new Scanner(ficheroOrigen);//Variable Scanner para leer fichero
 			Formatter salida = new Formatter(pathDestino);//Variable formatter para esribir en fichero
 			for (int i = 0; i < 11; i++) {
-				if (i != 0) {//Condicion para ignorar la cabecera
-					salida.format(fOrigen.nextLine() + "\n");
-				} else {
-					fOrigen.nextLine();
-				}
+				salida.format(fOrigen.nextLine() + "\n");
 			}
 			System.out.println("Fichero pruebas10 generado correctamente");
 			fOrigen.close();
@@ -70,11 +66,7 @@ public class Programa1GenerarPruebas {
 			Scanner fOrigen = new Scanner(ficheroOrigen);//Variable Scanner para leer fichero
 			Formatter salida = new Formatter(pathDestino);//Variable formatter para esribir en fichero
 			for (int i = 0; i < 2001; i++) {
-				if (i != 0) { //Condicion para ignorar la cabecera
-					salida.format(fOrigen.nextLine() + "\n");
-				} else {
-					fOrigen.nextLine();
-				}
+				salida.format(fOrigen.nextLine() + "\n");
 			}
 			System.out.println("Fichero pruebas2000 generado correctamente");
 			fOrigen.close();
