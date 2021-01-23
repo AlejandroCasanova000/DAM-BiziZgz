@@ -55,4 +55,9 @@ public class UsoBizi {
 		this.anclajeEstacion = anclajeEstacion;
 	}
 
+	@Override
+	public String toString() {
+		return "El usuario: " + ID + " ha cogido una bizi el " + retiroDT + " en la estacion " + retiroEstacion + " y la ha dejado el" + 
+				anclajeDT + " en la estacion " + anclajeEstacion;
+	}
 }
