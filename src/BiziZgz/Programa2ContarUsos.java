@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Esta clase Java, dado el path de un fichero .csv con la estructura determinada, muestra el numero totales de UsosBizi y la
  * el numero de recorridos si son Usos Circulares (RetiroEstacion y AnclajeEstacion son iguales), o si son traslados.
- * @author alexc
+ * @author alexc y Dana
  *
  */
 public class Programa2ContarUsos {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Esta clase Java define el objeto UsuarioBizi, que contiene el ID del usuario y una lista de 
  * UsosBizi, que tiene  por ID el mismo que el id del UsuarioBizi
- * @author alexc
+ * @author alexc y Dana
  *
  */
 public class UsuarioBizi {
