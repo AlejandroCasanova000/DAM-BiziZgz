@@ -3,7 +3,7 @@ package BiziZgz;
 /**
  * Esta clase Java define el objeto UsoBizi, que contiene el ID, la fecha de retiro de la bici, el ID de la estacion de retiro,
  * el dateTime de la llegada y la estacion de la misma
- * @author alexc
+ * @author alexc y Dana
  *
  */
 public class UsoBizi {

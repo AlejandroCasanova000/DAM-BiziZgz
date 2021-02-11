@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * Esta clase Java se encarga de mostrar el top 15 de UsuariosBizi con mayor cantidad de usos dado un fichero .csv con la estructura dada
- * @author alexc
+ * @author alexc y Dana
  *
  */
 public class Programa3TopUsuarios {
@@ -49,7 +49,7 @@ public class Programa3TopUsuarios {
 				if (Programa2ContarUsos.isInteger(lineaSeparada[0])) {
 					int ID = Integer.parseInt(lineaSeparada[0]);
 					if (!estaRegistrado(usuarios, ID)) {//Condicion para no repetir usuarios
-						usosUsuario = usosPorUnUsuario(usos, Integer.parseInt(lineaSeparada[0]));
+						usosUsuario = usosPorUnUsuario(usos, ID);
 						usuario = new UsuarioBizi(ID, usosUsuario);
 						usuarios.add(usuario);
 					}

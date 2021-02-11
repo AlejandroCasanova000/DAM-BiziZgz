@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Esta clase Java se encarga de coger los ficheros usos-16.csv y usos-17.csv y generar dos .csv que 
  * tengan las respectivas 10 y 2000 primeras líneas, para poder trabajar mejor.
- * @author alexc
+ * @author alexc y Dana
  *
  */
 
