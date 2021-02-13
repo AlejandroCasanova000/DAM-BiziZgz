@@ -42,15 +42,12 @@ public class Programa2ContarUsos {
 		File fichero = new File(path);
 		try {
 			Scanner f = new Scanner(fichero);
+			f.nextLine();
 			while (f.hasNextLine()) {
 				String[] lineaSeparada = f.nextLine().split(";");
-				if(isInteger(lineaSeparada[0])) {
-					uso = new UsoBizi(Integer.parseInt(lineaSeparada[0]), lineaSeparada[1], Integer.parseInt(lineaSeparada[2]),
-							lineaSeparada[3], Integer.parseInt(lineaSeparada[4]));
-					usos.add(uso);
-				} else {
-					f.nextLine();
-				}
+				uso = new UsoBizi(Integer.parseInt(lineaSeparada[0]), lineaSeparada[1], Integer.parseInt(lineaSeparada[2]),
+						lineaSeparada[3], Integer.parseInt(lineaSeparada[4]));
+				usos.add(uso);
 			}
 			System.out.println("Fichero " + path + " analizado con éxito: ");
 			f.close();
@@ -81,23 +78,5 @@ public class Programa2ContarUsos {
 		System.out.println("Número de usos circulares: " + cCirculos);
 		System.out.println("Número total de usos: " + usos.size());
 
-	}
-	
-	/**
-	 * Pre: Este metodo devuelve true si un string se puede pasar a int, si no, devuelve false
-	 * Post: Para ello se utiliza el try y catch, se intenta pasar el string [respuesta] a int haciendo uso
-	 * del metodo java Integer.parseInt(), si este metodo devuelve el error java.lang.NumberFormatException, el catch
-	 * devolvera flase, si no salta ningun error, devuelve true.
-	 * @param respuesta
-	 * @return
-	 */
-	public static boolean isInteger (String respuesta) {
-		try {
-			int numero = Integer.parseInt(respuesta);
-			numero = numero + 1;
-			return true;
-		} catch(java.lang.NumberFormatException e) {
-			return false;
-		}
 	}
 }
