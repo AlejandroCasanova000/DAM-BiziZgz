@@ -40,7 +40,7 @@ public class Programa1GenerarPruebas {
 		try {
 			Scanner fOrigen = new Scanner(ficheroOrigen);//Variable Scanner para leer fichero
 			Formatter salida = new Formatter(pathDestino);//Variable formatter para esribir en fichero
-			for (int i = 0; i < 11; i++) {
+			for (int i = 0; i < 10; i++) {
 				salida.format(fOrigen.nextLine() + "\n");
 			}
 			System.out.println("Fichero pruebas10 generado correctamente");
@@ -65,7 +65,7 @@ public class Programa1GenerarPruebas {
 		try {
 			Scanner fOrigen = new Scanner(ficheroOrigen);//Variable Scanner para leer fichero
 			Formatter salida = new Formatter(pathDestino);//Variable formatter para esribir en fichero
-			for (int i = 0; i < 2001; i++) {
+			for (int i = 0; i < 2000; i++) {
 				salida.format(fOrigen.nextLine() + "\n");
 			}
 			System.out.println("Fichero pruebas2000 generado correctamente");
