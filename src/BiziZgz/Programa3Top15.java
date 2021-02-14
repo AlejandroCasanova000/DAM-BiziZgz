@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Esta clase Java se encarga de mostrar el top15 de usuarios con mas UsosBizi y cuantos son circulares o traslados de un
+ * fichero .csv
+ * @author alexc
+ *
+ */
 public class Programa3Top15 {
 	
 	/**
@@ -17,8 +23,13 @@ public class Programa3Top15 {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Introduce el path + nombre");
 		String path = entrada.next();
-		HashMap<Integer, ArrayList<UsoBizi>> ids = crearMapaUsuarios(path);
-		mostrarTop15(ids);
+		/**
+		 * mapaIDs es un HashMap donde la K es el ID del UsoBizi, y el V es una lista de UsosBizi con el id K
+		 */
+		HashMap<Integer, ArrayList<UsoBizi>> mapaIDs = new HashMap<Integer, ArrayList<UsoBizi>>();
+		if(crearMapaUsuarios(path, mapaIDs)) {
+			mostrarTop15(mapaIDs);
+		}
 		entrada.close();
 	}
 
@@ -30,10 +41,10 @@ public class Programa3Top15 {
 	 * @param path La ruta del fichero
 	 * @return
 	 */
-	public static HashMap<Integer, ArrayList<UsoBizi>> crearMapaUsuarios(String path) {
+	public static boolean crearMapaUsuarios(String path, 
+			HashMap<Integer, ArrayList<UsoBizi>> mapaIDs) {
 		File fichero = new File(path);
 		UsoBizi uso;
-		HashMap<Integer, ArrayList<UsoBizi>> ids = new HashMap<Integer, ArrayList<UsoBizi>>();
 		try {
 			Scanner f = new Scanner(fichero);
 			f.nextLine();
@@ -42,18 +53,18 @@ public class Programa3Top15 {
 				int id = Integer.parseInt(lineaSeparada[0]);
 				uso = new UsoBizi(id , lineaSeparada[1], Integer.parseInt(lineaSeparada[2]),
 						lineaSeparada[3], Integer.parseInt(lineaSeparada[4]));
-				if(ids.containsKey(id)) {
-					ids.get(id).add(uso);
+				if(mapaIDs.containsKey(id)) {
+					mapaIDs.get(id).add(uso);
 				} else {
-					ids.put(Integer.parseInt(lineaSeparada[0]), new ArrayList<UsoBizi>());
-					ids.get(id).add(uso);
+					mapaIDs.put(Integer.parseInt(lineaSeparada[0]), new ArrayList<UsoBizi>());
+					mapaIDs.get(id).add(uso);
 				}
 			}
 			f.close();
-			return ids;
+			return true;
 		} catch (FileNotFoundException e) {
 			System.out.println("El fichero " + path + " no se ha podido abrir");
-			return null;
+			return false;
 		}
 	}
 
