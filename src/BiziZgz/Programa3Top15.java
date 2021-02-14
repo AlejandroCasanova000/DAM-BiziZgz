@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Esta clase Java se encarga de mostrar el top15 de usuarios con mas UsosBizi y cuantos son circulares o traslados de un
+ * fichero .csv
+ * @author alexc
+ *
+ */
 public class Programa3Top15 {
 	
 	/**
