@@ -88,7 +88,7 @@ public class Programa3Top15 {
 		for(int i = 0; i < 15; i++) {
 			for (Map.Entry<Integer, ArrayList<UsoBizi>> entrada : ids.entrySet()) {
 				int ID = entrada.getKey();
-				if(entrada.getValue().size() > mayor && !estaRegistrado(idsAnalizados, ID)) {
+				if(entrada.getValue().size() > mayor && !idsAnalizados.contains(ID)) {
 					mayor = entrada.getValue().size();
 					idMayor = ID;
 				}
@@ -100,22 +100,7 @@ public class Programa3Top15 {
 		}
 		System.out.format("+----------+-----------+----------+-------+%n");
 	}
-	
-	/**
-	 * Pre: Este metodo devuelve true si el [ID] esta dentro de la lista [ids]
-	 * @param ids Lista de ids
-	 * @param ID El ID a comparar
-	 * @return
-	 */
-	public static boolean estaRegistrado (ArrayList<Integer> ids, int ID) {
-		for (Integer idA : ids) {
-			if (idA == ID) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
+
 	/**
 	 * Pre: Este metodo devuelve el numero de usos circulares y traslados que tiene la lista de UsosBizi [usos]
 	 * Post: Para ello se recorre la losta comparando sus estaciones de retirada y las de llegada, si son iguales
